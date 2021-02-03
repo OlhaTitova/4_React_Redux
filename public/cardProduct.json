@@ -1,0 +1,13 @@
+[
+    {"name": "Шары без рисунка", "price": "1,41", "url": "img/card3.jpg", "id": "11111", "color": "разноцвет"},
+    {"name": "Шары с рисунком", "price": "1,50", "url": "img/withImg.jpg", "id": "22222", "color": "разноцвет"},
+    {"name": "Печать на шарах", "price": "0,40", "url": "img/print.jpg", "id": "33333", "color": "белый / черный"},
+    {"name": "Сердца", "price": "2,11", "url": "img/hearts.jpg", "id": "44444", "color": "красный"},
+    {"name": "Панч-боллы", "price": "4,87", "url": "img/panchball.jpg", "id": "55555", "color": "разноцвет"},
+    {"name": "Фигурные", "price": "4,95", "url": "img/figura.jpg", "id": "66666", "color": "разноцвет"},
+    {"name": "Шары для моделирования", "price": "2,64", "url": "img/modeling.jpg", "id": "77777", "color": "разноцвет"},
+    {"name": "Фольгированные шары", "price": "44,95", "url": "img/folga.jpg", "id": "88888", "color": "разноцвет"},
+    {"name": "Наборы в упаковке", "price": "48,28", "url": "img/set.jpg", "id": "99999", "color": "разноцвет"},
+    {"name": "Шары-буквы", "price": "20,54", "url": "img/worlds.jpg", "id": "00000", "color": "золото / серебро"}
+
+]

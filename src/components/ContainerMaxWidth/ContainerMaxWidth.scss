@@ -1,0 +1,20 @@
+.ContainerMaxWidth {
+    display: flex;
+    flex-direction: column;
+
+    &__BgImg {
+        width: 100%;
+        height: calc(37.5vw);
+        overflow: hidden;
+    }
+
+    &__Heading {
+        font-family: "Roboto", "Helvetica", "Arial", sans-serif;
+        font-size: 20px;
+        font-weight: 600;
+        text-transform: uppercase;
+        text-align: center;
+        color: #424242;
+        margin: 40px 30px 8px 30px;
+    }
+}

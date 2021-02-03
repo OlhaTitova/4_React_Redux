@@ -1,0 +1,78 @@
+@import '../../App.scss';
+
+p {
+    padding-top: 15px;
+}
+
+.Product {
+    width: 270px;
+    height: 346px;
+    margin: 16px;
+    color: rgba(0, 0, 0, 0.87);
+    background-color: #fff;
+    display: inline-block;
+    padding: 20px;
+    position: relative;
+    overflow: hidden;
+    border-radius: 4px;
+    box-shadow: 0px 2px 1px -1px rgba(0, 0, 0, 0.2), 0px 1px 1px 0px rgba(0, 0, 0, 0.14), 0px 1px 3px 0px rgba(0, 0, 0, 0.12);
+    transition: box-shadow 300ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+    transition: box-shadow 0.2s ease-out;
+}
+
+.Product:hover {
+    box-shadow: 2px 3px 7px 0px rgba(0, 0, 0, 0.24);
+}
+
+
+.Product__Name {
+    font-weight: 500;
+    font-size: 17px;
+}
+
+.Product__Img {
+    height: 150px;
+    transform: scale(0.95);
+    transition: transform 0.2s ease-out;
+    object-fit: cover;
+    width: 90%;
+    display: block;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.Product__Img:hover {
+    transform: scale(1);
+}
+
+.Product__Btn {
+    width: 23px;
+    height: 23px;
+    padding: 0;
+    display: inline-block;
+    background-color: #ffffff;
+    border: none;
+    outline: none;
+}
+
+.Product__Vendor {
+    font-size: 14px;
+    margin-right: 7px;
+    color: $bgInfo;
+}
+
+.Product__Color {
+    font-size: 14px;
+    margin-right: 7px;
+}
+
+.Product__Price {
+    font-size: 21px;
+    font-weight: 700;
+    color: $bgInfo;
+}
+
+.Product__Сurrency {
+    font-size: 10px;
+}

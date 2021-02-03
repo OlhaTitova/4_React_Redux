@@ -1,0 +1,122 @@
+* {
+    box-sizing: border-box;
+}
+
+$bgInfo: #0061c2;
+$bgInfoLight: #047ef8;
+
+p,
+h1,
+h2,
+h3,
+h4,
+h5 {
+    margin: 0;
+}
+
+.mt-15 {
+    margin-top: 15px;
+}
+
+.m-15 {
+    margin: 15px;
+}
+
+.width-200 {
+    width: 200px;
+}
+
+.row {
+    display: flex;
+}
+
+.column {
+    flex-direction: column;
+}
+
+.justify-content-between {
+    justify-content: space-between;
+}
+
+.align-items-center {
+    align-items: center;
+}
+
+.justify-content-center {
+    justify-content: center;
+}
+
+.Menu {
+    padding: 10px 24px;
+    min-height: 25px;
+    background-color: #eeeeee;
+    display: flex;
+    justify-content: center;
+    margin-top: 130px;
+}
+
+.MenuItems {
+    color: #616161;
+    margin: 0 20px;
+    display: inline-block;
+    position: relative;
+    font-weight: 500;
+    text-transform: uppercase;
+    text-decoration: none;
+    cursor: pointer;
+
+    &::after {
+        color: #6600ff;
+        width: 0;
+        height: 3px;
+        content: '';
+        display: block;
+        position: absolute;
+        box-sizing: border-box;
+        transition: 0.5s;
+        border-bottom: 1px solid #6600ff;
+    }
+}
+
+.heading-page {
+    color: #424242;
+    font-size: 22px;
+    font-family: "Roboto", "Helvetica", "Arial", sans-serif;
+    font-weight: 700;
+    line-height: 1.167;
+    margin-bottom: 30px;
+    letter-spacing: 0em;
+    text-transform: uppercase;
+
+}
+
+.container {
+    max-width: 1280px;
+    width: 100%;
+    box-sizing: border-box;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 32px;
+    padding-right: 32px;
+    padding-top: 30px;
+    padding-bottom: 30px;
+}
+
+.btn-icon {
+    width: 23px;
+    height: 23px;
+    padding: 0;
+    display: inline-block;
+    background-color: #ffffff;
+    border: none;
+    outline: none;
+    cursor: pointer;
+}
+
+.notification {
+    font-size: 24px;
+    line-height: 70px;
+    font-weight: 700;
+    color: rgb(0, 0, 0);
+    font-family: FontBrandedPrimary, FontBrandedSecondary, FontBrandedFallback, sans-serif;
+}
