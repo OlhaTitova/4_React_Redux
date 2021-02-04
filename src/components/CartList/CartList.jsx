@@ -15,7 +15,6 @@ export const CartList = connect(mapStateToProps, { getCartList, closeModalDelete
 
     useEffect(() => { getCartList() }, []);
 
-    console.log(cartProducts);
     return (
         <div>
 

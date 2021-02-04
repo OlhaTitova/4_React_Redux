@@ -34,7 +34,6 @@ export const getFavoriteList = () => (dispatch) => {
 
 export const toggleFavorite = (item) => (dispatch) => {
     const favorite = JSON.parse(localStorage.getItem('favoriteList')) || {};
-    console.log(favorite[item.id]);
     if (favorite[item.id]) {
         delete favorite[item.id];
     } else {
