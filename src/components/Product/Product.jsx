@@ -1,19 +1,21 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import PropTypes from 'prop-types';
 import './Product.scss';
 import { Button } from '../Button/Button';
 import { FavoriteButton } from '../FavoriteButton/FavoriteButton';
 import { EMPTY_HEART, FULL_HEART } from '../../utils/ico';
-import { showModalAddToCart, toggleFavorite } from "../../store";
 import { connect } from "react-redux";
+import { showModalAddToCart } from '../../store/modalAdd';
+import { selectFavorite, toggleFavorite } from '../../store/favorite';
+
 
 const mapStateToProps = (state) => ({
-  favoriteProducts: state.favoriteProducts
-})
+  favoriteProducts: selectFavorite(state)
+});
 
 export const Product = connect(mapStateToProps, { showModalAddToCart, toggleFavorite })(({ product, showModalAddToCart, favoriteProducts, toggleFavorite }) => {
 
-  const colorSvg = favoriteProducts.filter(item => item.id === product.id).length > 0 ? FULL_HEART : EMPTY_HEART
+  const colorSvg = favoriteProducts[product.id] ? FULL_HEART : EMPTY_HEART
 
   return (
     <div
@@ -29,7 +31,7 @@ export const Product = connect(mapStateToProps, { showModalAddToCart, toggleFavo
         />
 
         <FavoriteButton
-          onClick={() => toggleFavorite(product.id)}
+          onClick={() => toggleFavorite(product)}
           d={colorSvg}
         />
 
@@ -59,7 +61,7 @@ export const Product = connect(mapStateToProps, { showModalAddToCart, toggleFavo
         </span>
 
         <Button
-          onClick={() => showModalAddToCart(product.id)}
+          onClick={() => showModalAddToCart(product)}
           className="btn"
           text="Add to cart"
           style={{ backgroundColor: "#0061c2" }}

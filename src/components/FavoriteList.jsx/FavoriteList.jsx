@@ -4,12 +4,12 @@ import { ModalAddCart } from '../ModalAddCart/ModalAddCart';
 import { Product } from '../Product/Product';
 import '../ProductList/ProductList.scss';
 import { connect } from "react-redux";
-import { getFavoriteList, closeModalAdd, modalConfirmAddToCart } from '../../store';
-
+import { closeModalAdd, modalConfirmAddToCart, selectModalAdd } from '../../store/modalAdd';
+import { getFavoriteList, selectFavorite } from '../../store/favorite';
 
 const mapStateToProps = (state) => ({
-    favorites: state.favoriteProducts,
-    modalProductId: state.modalProductId
+    favorites: selectFavorite(state),
+    modalProductId: selectModalAdd(state),
 })
 
 export const FavoriteList = connect(mapStateToProps, { getFavoriteList, closeModalAdd, modalConfirmAddToCart })(({ favorites, modalProductId, getFavoriteList, closeModalAdd, modalConfirmAddToCart }) => {
@@ -18,10 +18,9 @@ export const FavoriteList = connect(mapStateToProps, { getFavoriteList, closeMod
 
     return (
         <div className="ProductList">
+            {Object.keys(favorites).length > 0 ?
 
-            {favorites.length > 0 ?
-
-                favorites.map(product =>
+                Object.values(favorites).map(product =>
                     <Product
                         key={product.id}
                         product={product}

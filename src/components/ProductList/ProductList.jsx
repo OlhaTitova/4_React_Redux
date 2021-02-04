@@ -3,18 +3,19 @@ import PropTypes from 'prop-types';
 import { Product } from "../Product/Product";
 import { ModalAddCart } from "../ModalAddCart/ModalAddCart";
 import './ProductList.scss';
-import { getFavoriteList, closeModalAdd, modalConfirmAddToCart } from "../../store";
+import { closeModalAdd, modalConfirmAddToCart, selectModalAdd } from "../../store/modalAdd";
 import { connect } from "react-redux";
+import { getProductList, selectProducts } from "../../store/products";
 
 
 const mapStateToProps = (state) => ({
-  products: state.products,
-  modalProductId: state.modalProductId
+  products: selectProducts(state),
+  modalProductId: selectModalAdd(state),
 })
 
-export const ProductList = connect(mapStateToProps, { getFavoriteList, closeModalAdd, modalConfirmAddToCart })(({ products, modalProductId, getFavoriteList, closeModalAdd, modalConfirmAddToCart }) => {
+export const ProductList = connect(mapStateToProps, { getProductList, closeModalAdd, modalConfirmAddToCart })(({ products, modalProductId, getProductList, closeModalAdd, modalConfirmAddToCart }) => {
 
-  useEffect(() => getFavoriteList(), []);
+  useEffect(() => getProductList(), []);
 
 
   return (
@@ -41,7 +42,7 @@ export const ProductList = connect(mapStateToProps, { getFavoriteList, closeModa
 ProductList.propTypes = {
   products: PropTypes.object,
   modalProductId: PropTypes.object,
-  getFavoriteList: PropTypes.func,
+  getProductList: PropTypes.func,
   closeModalAdd: PropTypes.func,
   modalConfirmAddToCart: PropTypes.func
 }

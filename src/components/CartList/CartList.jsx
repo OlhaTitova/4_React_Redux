@@ -1,30 +1,31 @@
 import React, { useEffect } from 'react';
 import PropTypes from 'prop-types';
 import { CartItem } from '../CartItem/CartItem';
-import { closeModalDelete, getCartList, modalConfirmDelete } from '../../store';
+import { getCartList, modalConfirmDelete, selectCart, selectModalDel, closeModalDelete } from '../../store/cart';
 import { ModalDeleteCart } from '../ModalDeleteCart/ModalDeleteCart';
 import { connect } from 'react-redux';
 
+
 const mapStateToProps = (state) => ({
-    cartProducts: state.cartProducts,
-    modalDeleteId: state.modalDeleteId,
-    productsCounts: state.productsCounts
+    cartProducts: selectCart(state),
+    modalDeleteId: selectModalDel(state),
 })
 
-export const CartList = connect(mapStateToProps, { getCartList, closeModalDelete, modalConfirmDelete })(({ cartProducts, productsCounts, getCartList, modalDeleteId, closeModalDelete, modalConfirmDelete }) => {
+export const CartList = connect(mapStateToProps, { getCartList, closeModalDelete, modalConfirmDelete })(({ cartProducts, getCartList, modalDeleteId, closeModalDelete, modalConfirmDelete }) => {
 
-    useEffect(() => { getCartList() }, [])
+    useEffect(() => { getCartList() }, []);
 
+    console.log(cartProducts);
     return (
         <div>
 
             { Object.keys(cartProducts).length > 0 ?
-                cartProducts.map(product => {
+                Object.values(cartProducts).map(product => {
                     return (
                         <CartItem
                             key={product.id}
                             product={product}
-                            count={productsCounts[product.id]}
+                            count={product.count}
                         />
                     )
                 })
