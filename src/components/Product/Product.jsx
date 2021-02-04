@@ -1,9 +1,10 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
 import './Product.scss';
 import { Button } from '../Button/Button';
 import { FavoriteButton } from '../FavoriteButton/FavoriteButton';
 import { EMPTY_HEART, FULL_HEART } from '../../utils/ico';
+import { isFavorite } from '../../utils/favorite';
 import { connect } from "react-redux";
 import { showModalAddToCart } from '../../store/modalAdd';
 import { selectFavorite, toggleFavorite } from '../../store/favorite';
@@ -13,9 +14,8 @@ const mapStateToProps = (state) => ({
   favoriteProducts: selectFavorite(state)
 });
 
-export const Product = connect(mapStateToProps, { showModalAddToCart, toggleFavorite })(({ product, showModalAddToCart, favoriteProducts, toggleFavorite }) => {
-
-  const colorSvg = favoriteProducts[product.id] ? FULL_HEART : EMPTY_HEART
+export const Product = connect(mapStateToProps, { showModalAddToCart, toggleFavorite })(({ product, showModalAddToCart, toggleFavorite }) => {
+  const colorSvg = isFavorite(product.id) ? FULL_HEART : EMPTY_HEART
 
   return (
     <div

@@ -3,15 +3,11 @@ import PropTypes from 'prop-types';
 import { Button } from "../Button/Button";
 import '../Product/Product.scss';
 import './CartItem.scss';
-// import { useDispatch } from "react-redux";
 import { connect } from "react-redux";
 import { showModalDelete } from "../../store/cart";
 
 
 export const CartItem = connect(null, { showModalDelete })(({ product, count, showModalDelete }) => {
-    // export const CartItem = ({ product, count }) => {
-    // const dispatch = useDispatch();
-    // const onClick = () => { showModalDelete(product.id)(dispatch) }
 
     return (
         <div>
