@@ -14,7 +14,7 @@ const mapStateToProps = (state) => ({
 
 export const FavoriteList = connect(mapStateToProps, { getFavoriteList, closeModalAdd, modalConfirmAddToCart })(({ favorites, modalProductId, getFavoriteList, closeModalAdd, modalConfirmAddToCart }) => {
 
-    useEffect(() => getFavoriteList(), [])
+    useEffect(() => getFavoriteList(), [getFavoriteList])
 
     return (
         <div className="ProductList">

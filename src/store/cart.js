@@ -17,7 +17,6 @@ const initialState = {
     modalDeleteId: null,
 }
 
-
 export function cartReducer(state = initialState, action) {
     switch (action.type) {
         case GET_CART_PRODUCTS:
@@ -55,12 +54,10 @@ export const removeCartProducts = (payload) => ({
     payload
 });
 
-
 export const getCartList = () => (dispatch) => {
     const cartListItems = getProductWithCart();
     dispatch(getCartProducts(cartListItems))
 }
-
 
 export const showModalDelete = (payload) => ({
     type: SHOW_MODAL_DELETE,

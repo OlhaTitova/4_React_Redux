@@ -15,7 +15,7 @@ const mapStateToProps = (state) => ({
 
 export const ProductList = connect(mapStateToProps, { getProductList, closeModalAdd, modalConfirmAddToCart })(({ products, modalProductId, getProductList, closeModalAdd, modalConfirmAddToCart }) => {
 
-  useEffect(() => getProductList(), []);
+  useEffect(() => getProductList(), [getProductList]);
 
 
   return (

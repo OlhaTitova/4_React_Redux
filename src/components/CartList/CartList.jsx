@@ -13,12 +13,12 @@ const mapStateToProps = (state) => ({
 
 export const CartList = connect(mapStateToProps, { getCartList, closeModalDelete, modalConfirmDelete })(({ cartProducts, getCartList, modalDeleteId, closeModalDelete, modalConfirmDelete }) => {
 
-    useEffect(() => { getCartList() }, []);
+    useEffect(() => { getCartList() }, [getCartList]);
 
     return (
         <div>
 
-            { Object.keys(cartProducts).length > 0 ?
+            {Object.keys(cartProducts).length > 0 ?
                 Object.values(cartProducts).map(product => {
                     return (
                         <CartItem
